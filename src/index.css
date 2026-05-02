@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 dark:text-slate-100 antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Outfit'] font-bold;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-slate-800/50 rounded-2xl shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-accent-primary text-white rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-accent-primary/25;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white rounded-xl font-semibold transition-all hover:bg-slate-300 dark:hover:bg-slate-700 active:scale-95;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-accent-primary to-accent-secondary bg-clip-text text-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
