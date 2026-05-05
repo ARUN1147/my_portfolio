@@ -50,7 +50,7 @@ const techStack = [
   {
     category: 'DevOps & Tools',
     skills: [
-      { name: 'AWS', slug: 'amazonaws', icon: null },
+      { name: 'AWS', slug: 'amazonwebservices', icon: null },
       { name: 'Vercel', slug: 'vercel', icon: null },
       { name: 'Netlify', slug: 'netlify', icon: null },
       { name: 'Git', slug: 'git', icon: null },
@@ -83,21 +83,21 @@ const TechStack = () => {
                   whileHover={{ y: -5 }}
                   className="flex flex-col items-center justify-center gap-3 group transition-all cursor-default"
                 >
-                  <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-slate-50 dark:bg-slate-800/30 group-hover:bg-accent-primary/10 transition-all duration-500">
+                  <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-slate-200 dark:bg-slate-800/30 group-hover:bg-accent-primary/10 transition-all duration-500">
                     {skill.slug ? (
                       <img 
                         src={`https://cdn.simpleicons.org/${skill.slug}`} 
                         alt={skill.name}
-                        className="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                        className="w-10 h-10 object-contain transition-all duration-500"
                         onError={(e) => {
                           e.target.style.display = 'none';
                         }}
                       />
                     ) : (
-                      <skill.icon size={32} className="text-slate-400 group-hover:text-accent-primary transition-colors" />
+                      <skill.icon size={32} className="text-accent-primary transition-colors" />
                     )}
                   </div>
-                  <span className="text-xs font-semibold tracking-wide text-slate-500 dark:text-slate-400 group-hover:text-accent-primary transition-colors">
+                  <span className="text-xs font-semibold tracking-wide text-slate-600 dark:text-slate-400 group-hover:text-accent-primary transition-colors">
                     {skill.name}
                   </span>
                 </motion.div>

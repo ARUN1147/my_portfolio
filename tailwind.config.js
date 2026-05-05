@@ -9,11 +9,11 @@ export default {
     extend: {
       colors: {
         background: {
-          light: '#f8fafc',
+          light: '#f1f5f9', // Slate 100 instead of 50
           dark: '#0a0b1e',
         },
         card: {
-          light: '#ffffff',
+          light: '#e2e8f0', // Slate 200 instead of white
           dark: '#161b22',
         },
         accent: {

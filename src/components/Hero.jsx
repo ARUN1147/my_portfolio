@@ -1,12 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Mail, Terminal } from 'lucide-react'
+import DevJson from './DevJson'
 
 const stats = [
   { label: 'Years Experience', value: '1.5+' },
   { label: 'Production Builds', value: '10+' },
   { label: 'Code Quality', value: '99%' },
-  { label: 'System Uptime', value: '24/7' },
 ]
 
 const Hero = () => {
@@ -18,28 +18,25 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-sm font-medium mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Available for new opportunities
-          </div>
-          
+
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Hi, I'm <br />
             <span className="text-accent-primary">Arun R</span>
           </h1>
-          
-          <h2 className="text-2xl md:text-3xl font-semibold text-slate-700 dark:text-slate-300 mb-6">
+
+          <h2 className="text-2xl md:text-3xl font-semibold text-slate-800 dark:text-slate-300 mb-6">
             Product Engineer
           </h2>
-          
-          <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-lg leading-relaxed">
+
+          <p className="text-lg text-slate-700 dark:text-slate-400 mb-8 max-w-lg leading-relaxed">
             "I enjoy building systems that reduce manual work and scale with business growth."
           </p>
-          
-          <p className="text-slate-500 dark:text-slate-500 mb-10 max-w-lg">
+
+          <p className="text-slate-600 dark:text-slate-500 mb-10 max-w-lg">
             Product Engineer with 1.5+ years of experience building scalable, React-heavy web applications and startup products. Focus on real business problems, performance, and secure deployments.
           </p>
-          
+
           <div className="flex flex-wrap gap-4">
             <button className="btn-primary flex items-center gap-2">
               View My Work <ArrowRight size={20} />
@@ -50,7 +47,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -73,7 +70,7 @@ const Hero = () => {
                 </radialGradient>
               </defs>
               <circle cx="100" cy="100" r="80" fill="url(#glow)" />
-              
+
               {/* Animated Tech Elements */}
               <motion.path
                 d="M60 70 L140 70 L140 130 L60 130 Z"
@@ -81,12 +78,12 @@ const Hero = () => {
                 stroke="currentColor"
                 strokeWidth="2"
                 className="text-accent-primary"
-                animate={{ 
+                animate={{
                   strokeDasharray: ["0, 400", "400, 0"],
                 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
               />
-              
+
               <motion.circle
                 cx="100"
                 cy="100"
@@ -98,7 +95,7 @@ const Hero = () => {
                 animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
                 transition={{ duration: 4, repeat: Infinity }}
               />
-              
+
               {/* Central Icon */}
               <motion.g
                 animate={{ y: [0, -10, 0] }}
@@ -108,7 +105,7 @@ const Hero = () => {
                 <path d="M92 95 L98 100 L92 105" fill="none" stroke="white" strokeWidth="2" />
                 <line x1="102" y1="105" x2="108" y2="105" stroke="white" strokeWidth="2" />
               </motion.g>
-              
+
               {/* Floating Orbs */}
               {[...Array(5)].map((_, i) => (
                 <motion.circle
@@ -132,25 +129,7 @@ const Hero = () => {
           </div>
 
           {/* Floating Code Snippet Card */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}
-            className="absolute -bottom-6 -right-6 md:right-0 glass-card p-6 hidden sm:block max-w-[280px]"
-          >
-            <div className="flex items-center gap-2 mb-3">
-              <Terminal size={16} className="text-accent-primary" />
-              <span className="text-xs font-mono text-slate-400">developer.json</span>
-            </div>
-            <pre className="text-xs font-mono text-slate-600 dark:text-slate-400 leading-relaxed">
-              {`{
-  "name": "Arun R",
-  "role": "Product Engineer",
-  "passion": "Building Systems",
-  "code": "Scalable & Clean"
-}`}
-            </pre>
-          </motion.div>
+          <DevJson />
         </motion.div>
       </div>
 
