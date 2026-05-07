@@ -54,94 +54,32 @@ const Hero = () => {
           className="relative"
         >
           {/* Profile Image Container */}
-          <div className="relative w-full aspect-square max-w-[450px] mx-auto rounded-3xl overflow-hidden glass-card border-none flex items-center justify-center p-8">
-            <motion.svg
-              viewBox="0 0 200 200"
-              className="w-full h-full"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Background Glow */}
-              <defs>
-                <radialGradient id="glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                  <stop offset="0%" stopColor="var(--accent-primary)" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="var(--accent-primary)" stopOpacity="0" />
-                </radialGradient>
-              </defs>
-              <circle cx="100" cy="100" r="80" fill="url(#glow)" />
-
-              {/* Animated Tech Elements */}
-              <motion.path
-                d="M60 70 L140 70 L140 130 L60 130 Z"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="text-accent-primary"
-                animate={{
-                  strokeDasharray: ["0, 400", "400, 0"],
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-              />
-
-              <motion.circle
-                cx="100"
-                cy="100"
-                r="30"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                className="text-slate-400"
-                animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              />
-
-              {/* Central Icon */}
-              <motion.g
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <rect x="85" y="85" width="30" height="30" rx="4" fill="currentColor" className="text-accent-primary" />
-                <path d="M92 95 L98 100 L92 105" fill="none" stroke="white" strokeWidth="2" />
-                <line x1="102" y1="105" x2="108" y2="105" stroke="white" strokeWidth="2" />
-              </motion.g>
-
-              {/* Floating Orbs */}
-              {[...Array(5)].map((_, i) => (
-                <motion.circle
-                  key={i}
-                  r="3"
-                  fill="currentColor"
-                  className="text-accent-primary"
-                  animate={{
-                    x: [Math.random() * 200, Math.random() * 200],
-                    y: [Math.random() * 200, Math.random() * 200],
-                    opacity: [0, 0.8, 0],
-                  }}
-                  transition={{
-                    duration: 5 + Math.random() * 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              ))}
-            </motion.svg>
+          <div className="relative w-full aspect-square max-w-[450px] mx-auto rounded-3xl overflow-hidden border-none flex items-center justify-center bg-slate-100 dark:bg-slate-900 group">
+            <video
+              src="/vid.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+            {/* Floating Code Snippet Card - Now inside the container */}
+            <div className="absolute inset-0 p-3 sm:p-5 flex items-end justify-end pointer-events-none">
+              <DevJson />
+            </div>
           </div>
-
-          {/* Floating Code Snippet Card */}
-          <DevJson />
         </motion.div>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+      <div className="flex flex-wrap justify-center gap-6 mt-20">
         {stats.map((stat, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 + index * 0.1 }}
-            className="glass-card p-6 text-center"
+            className="glass-card p-6 text-center min-w-[240px]"
           >
             <div className="text-3xl font-bold text-accent-primary mb-1">{stat.value}</div>
             <div className="text-sm text-slate-500 font-medium uppercase tracking-wider">{stat.label}</div>
