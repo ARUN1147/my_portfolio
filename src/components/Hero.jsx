@@ -41,9 +41,12 @@ const Hero = () => {
             <button className="btn-primary flex items-center gap-2">
               View My Work <ArrowRight size={20} />
             </button>
-            <button className="btn-secondary flex items-center gap-2 border border-slate-200 dark:border-slate-700">
+            <a 
+              href="mailto:arun1147r@gmail.com"
+              className="btn-secondary flex items-center gap-2 border border-slate-200 dark:border-slate-700"
+            >
               Contact Me <Mail size={20} />
-            </button>
+            </a>
           </div>
         </motion.div>
 
