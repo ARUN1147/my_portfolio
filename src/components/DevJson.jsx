@@ -11,7 +11,7 @@ const DevJson = () => {
 
   return (
     <div 
-      className="relative block w-full sm:min-w-[280px] max-w-[320px] overflow-hidden group pointer-events-auto scale-90 sm:scale-100 origin-bottom-right p-4 sm:p-5"
+      className="relative block w-full sm:min-w-[280px] max-w-[320px] overflow-hidden group pointer-events-auto scale-90 sm:scale-100 origin-bottom-left p-4 sm:p-5"
     >
 
       

@@ -67,7 +67,7 @@ const Hero = () => {
               className="w-full h-full object-cover"
             />
             {/* Floating Code Snippet Card - Now inside the container */}
-            <div className="absolute inset-0 p-3 sm:p-5 flex items-end justify-end pointer-events-none">
+            <div className="absolute inset-0 p-6 sm:p-8 flex items-end justify-start pointer-events-none">
               <DevJson />
             </div>
           </div>
